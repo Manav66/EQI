@@ -1195,3 +1195,43 @@ font-weight: bold; }
 	box-shadow: inset 0 0 0 2px #a7e245;
 	transform: translateX(30%);
 }
+
+.span2 {
+  display: none;
+}
+.open {
+  display: block;
+}
+
+.air-stn,.wtr-stn,.soil-stn{
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: var(--ff-abril-fatface);
+}
+
+.aqi-div,.wqi-div,.sqi-div{
+  position: relative;
+  margin-left: 512px;
+}
+
+.aqi-btn,.wqi-btn,.sqi-btn{
+  color: black;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.aqihdng,.wqihdng,.sqihdng{
+  font-size: 40px;
+  font-family: var(--ff-abril-fatface);
+}
+
+#search {
+  margin: 0 auto;
+  display: block;
+}
+
+.box{
+  display: inline-block;
+}

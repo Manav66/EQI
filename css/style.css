@@ -45,6 +45,11 @@
 
 }
 
+#list{
+  padding-left: 20px;
+  list-style: disc !important;
+}
+
 *,
 *::before,
 *::after {
@@ -53,7 +58,9 @@
   box-sizing: border-box;
 }
 
-li { list-style: none; }
+li{
+  list-style: none;
+}
 
 a { text-decoration: none; }
 
@@ -1233,5 +1240,10 @@ font-weight: bold; }
 }
 
 .box{
-  display: inline-block;
+  display: flex;
+}
+
+.aqiknow,.wqiknow,.sqiknow{
+  background-color: #DEFCF9;
+  font-weight: bold;
 }

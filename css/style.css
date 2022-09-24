@@ -113,10 +113,11 @@ body {
 .btn {
   background: var(--background, var(--white-1));
   color: var(--color, var(--viridian-green));
-  font-weight: var(--fw-700);
+  font-weight:bold;
+  font-size: 12px;
   width: max-content;
   font-family: 'Courier New', Courier, monospace;
-  padding: 10px 25px;
+  padding: 10px 20px;
   border: 2px solid var(--border-color, var(--white-1));
   border-radius: var(--radius-6);
 }
@@ -124,6 +125,7 @@ body {
 .btn-secondary:is(:hover, :focus) {
   --background: transparent;
   --color: var(--white-1);
+  font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -321,8 +323,8 @@ margin-left: 7px;
   width: max-content;
 }
 
-.navbar-link:is(:hover, :focus) { border-color: var(--white-1); text-decoration: none; color: var(--white-1);}
 
+.navbar-link:is(:hover, :focus) { border-color: var(--white-1); text-decoration: none; color: var(--white-1);}
 
 .shape { display: none; }
 
@@ -532,7 +534,7 @@ font-weight: bold; }
 
 .btn-link {
   color: var(--viridian-green);
-  font-weight: var(--fw-700);
+  font-weight: bold;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -542,10 +544,6 @@ font-weight: bold; }
 .btn-link ion-icon { font-size: 20px; }
 
 .btn-link:is(:hover, :focus) { color: var(--oxford-blue); }
-
-
-
-
 
 /* FOOTER */
 
@@ -646,9 +644,6 @@ font-weight: bold; }
 
 .social-link:is(:hover, :focus) { background: var(--viridian-green); }
 
-
-
-
 /* Back to top */
 
 .go-top {
@@ -673,19 +668,9 @@ font-weight: bold; }
 
 .go-top:is(:hover, :focus) { transform: translateY(-25px); }
 
+@media (min-width: 575px) { 
 
-
-
-
-
-
-@media (min-width: 575px) {
-
-  
-
-  :root {
-
-    
+  :root {  
 
     --fs-1: 5rem;
     --fs-3: 4rem;
@@ -693,24 +678,11 @@ font-weight: bold; }
 
   }
 
-
-
-  
-
   .hero-text { --fs-7: 1.8rem; }
-
-
-
-  
 
   .footer-top { grid-template-columns: 1fr 1fr; }
 
 }
-
-
-
-
-
 
 @media (min-width: 768px) {
 
@@ -722,10 +694,6 @@ font-weight: bold; }
 
   .popular-list,
   .blog-list { grid-template-columns: 1fr 1fr; }
-
-
-
-  
 
   .hero {
     min-height: 550px;
@@ -739,16 +707,9 @@ font-weight: bold; }
     gap: 40px;
   }
 
-  
-
-  
   .destination-list > li { width: calc(33.33% - 20px); }
 
   .destination-list .w-50 { width: calc(50% - 20px); }
-
-
-
-  
 
   .footer { --fs-7: 1.6rem; }
 
@@ -811,10 +772,6 @@ font-weight: bold; }
     margin-bottom: 8px;
   }
 
-
-
-  
-
   .hero {
     position: relative;
     min-height: 680px;
@@ -867,13 +824,9 @@ font-weight: bold; }
 
   .about-content { margin-bottom: 0; }
 
-
-
   .footer-top { grid-template-columns: 1fr 1fr 1fr 2fr; }
 
 }
-
-
 
 
 @media (min-width: 1200px) {
@@ -1279,4 +1232,55 @@ font-weight: bold; }
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   /* font-size: 40px;*/
+  }
+
+  .flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    margin-bottom: 100px;
+    margin: 10px 30px 30px 40px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .pre{
+    display: flex;
+    align-items: center;
   }

@@ -41,7 +41,9 @@ $(function () {
 
 function apicall(){
   var val = document.getElementById('searchaqi').value;
-  _aqiFeed({  container:"city-aqi-container",  city:val  });
+  _aqiFeed({  city:val,  lang:"en",  callback:function(aqi){  
+    $("#aqi-details").html(aqi.details);  
+  }  });
 }
 
       

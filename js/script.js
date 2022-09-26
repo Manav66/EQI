@@ -38,3 +38,11 @@ $(function () {
     $('.span2').addClass('open');
   });
 });
+
+function apicall(){
+  var val = document.getElementById('searchaqi').value;
+  _aqiFeed({  container:"city-aqi-container",  city:val  });
+}
+
+      
+      

@@ -27,7 +27,7 @@
   <header class="header" data-header>
     <div class="container">
 
-      <a href="index.html">
+      <a href="index.html" style="text-decoration: none;">
         <h1 class="logo">EQI</h1>
       </a>
 
@@ -70,10 +70,6 @@
     </div>
   </header>
 
-
-
-
-
   <main>
     <article>
 
@@ -111,15 +107,15 @@
 
           <p class="air-stn">Air Quality Index</p>
 
-          <p>
-          <div class="aqi-div">
+          <p>        
+             <div class="aqi-div">
             <a class="btn btn-primary btn-secondary aqi-btn" data-toggle="collapse" href="#collapseExample" role="button"
               aria-expanded="false" aria-controls="collapseExample">
               Know More
             </a>
           </div>
           <div class="collapse" id="collapseExample">
-            <div class="card card-body aqiknow">
+            <div class="card2 card-body aqiknow">
               Think of the AQI as a yardstick that runs from 0 to 500. The higher the AQI value, the greater the level
               of air pollution and the greater the health concern. For example, an AQI value of 50 or below represents
               good air quality, while an AQI value over 300 represents hazardous air quality.
@@ -135,7 +131,7 @@
               </ul>
               The AQI values and corresponding ambient concentrations (health breakpoints) as well as associated likely
               health impacts for the identified eight pollutants are as follows:
-              <img src="./images/aqi-img1.PNG" style="margin-top: 20px" alt="Aqi">
+              <img class="card-img" src="./images/aqi-img1.PNG" style="margin-top: 20px" alt="Aqi">
             </div>
           </div>
 
@@ -149,11 +145,17 @@
           </div>
           <div class="box">
             <div class="Searchbox">
-              <input type="search" id="search" placeholder="Search" style="border:none;" />
+              <input type="search" id="searchaqi" placeholder="Search" style="border:none;" />
             </div>
             <div class="SearchButton">
-              <button style="font-size:24px; outline: none;"><i class="fa fa-search"></i></button>
+              <button id="aqisrchbtn" onclick="apicall()" style="font-size:24px; outline: none;">
+                <i class="fa fa-search"></i></button>
             </div>
+          </div>
+        </br>
+      </br>
+          <div id="aqi-details" style="justify-content:center; padding-left: 0px;">
+            <!-- <span id="city-aqi-container" ></span> -->
           </div>
         </div>
       </section>
@@ -468,6 +470,14 @@
   <!-- 
     - custom js link
   -->
+  <script  type="text/javascript"  charset="utf-8">
+   {(function(w,d,t,f){  w[f]=w[f]||function(c,k,n){s=w[f],k=s['k']=(s['k']||(k?('&k='+k):''));s['c']=  
+    c=(c  instanceof  Array)?c:[c];s['n']=n=n||0;L=d.createElement(t),e=d.getElementsByTagName(t)[0];  
+    L.async=1;L.src='//feed.aqicn.org/feed/'+(c[n].city)+'/'+(c[n].lang||'')+'/feed.v1.js?n='+n+k;  
+    e.parentNode.insertBefore(L,e);  };  })(  window,document,'script','_aqiFeed'  );
+  }    
+</script>
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

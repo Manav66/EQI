@@ -39,12 +39,32 @@ $(function () {
   });
 });
 
-function apicall(){
+/* function apicall(){
   var val = document.getElementById('searchaqi').value;
   _aqiFeed({  city:val,  lang:"en",  callback:function(aqi){  
     $("#aqi-details").html(aqi.details);  
   }  });
-}
+} */
+
+var cards = document.querySelectorAll('.card');
+
+[...cards].forEach((card)=>{
+  card.addEventListener( 'click', function() {
+    card.classList.toggle('is-flipped');
+  });
+});
+
+function cityapi(){
+  var val = document.getElementById("city").value;
+  console.log(val);
+  /* _aqiFeed({    
+    display:"%cityname  AQI  is  %aqi<br><small>on  %date</small>",  
+    container:"city-aqi-container-display",    
+    city:val  
+  }); */
+} 
+
+
 
       
       

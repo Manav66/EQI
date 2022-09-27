@@ -46,5 +46,23 @@ function apicall(){
   }  });
 }
 
+var cards = document.querySelectorAll('.card');
+
+[...cards].forEach((card)=>{
+  card.addEventListener( 'mouseenter', function() {
+    card.classList.toggle('is-flipped');
+  });
+});
+
+function cityapi(val){
+  console.log(val);
+  _aqiFeed({  city:val,  lang:"en",  callback:function(aqi){  
+    $('.city-back').html(aqi.details);  
+  }  });
+
+} 
+
+
+
       
       
